@@ -1,0 +1,12 @@
+.mainLogo {
+    width: 50%;
+}
+
+.mainDrawing {
+    position: absolute;
+    height: 80%;
+    opacity: 0.8;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}

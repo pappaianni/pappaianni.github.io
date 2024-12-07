@@ -1,0 +1,22 @@
+body, html {
+    height: 100%
+}
+
+body {
+    margin: 0px;
+}
+
+/* Container Dimensions */
+
+.container-full-page {
+    width: 100%;
+    height: 100%;
+}
+
+/* Positioning */
+
+.position-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
