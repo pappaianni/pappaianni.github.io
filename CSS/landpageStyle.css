@@ -1,5 +1,8 @@
 .mainLogo {
     width: 50%;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+    transition: transform 1.5s;
 }
 
 .mainDrawing {
@@ -10,3 +13,50 @@
     bottom: 0;
     z-index: -1;
 }
+
+.poetryContainer {
+    font-size: 50px;
+    font-style: oblique !important;
+}
+
+.poetryContainer p
+{
+    margin: 0.5em;
+}
+
+/* Animations */
+
+.transform-scale-low
+{
+    transition: transform 1.5s;
+}
+
+.transform-scale-low:hover
+{
+    transform: scale(1.05);
+}
+
+.transform-scale-medium
+{
+    transition: transform 1.5s;
+}
+
+.transform-scale-medium:hover
+{
+    transform: scale(1.15);
+}
+
+/* Font Style */
+
+.amatic-sc-regular {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .amatic-sc-bold {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
