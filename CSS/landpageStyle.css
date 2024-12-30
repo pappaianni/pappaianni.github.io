@@ -195,12 +195,12 @@
 @font-face
 {
     font-family: 'Pappafont';
-    src: url('pappafont.eot'); /* IE9 Compat Modes */
-    src: url('pappafont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('pappafont.woff2') format('woff2'), /* Super Modern Browsers */
-            url('pappafont.woff') format('woff'), /* Pretty Modern Browsers */
-            url('pappafont.ttf')  format('truetype'), /* Safari, Android, iOS */
-            url('pappafont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('Pappafont.eot'); /* IE9 Compat Modes */
+    src: url('Pappafont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('Pappafont.woff2') format('woff2'), /* Super Modern Browsers */
+            url('Pappafont.woff') format('woff'), /* Pretty Modern Browsers */
+            url('Pappafont.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('Pappafont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 .pappafont
