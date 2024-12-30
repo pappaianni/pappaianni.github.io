@@ -24,13 +24,18 @@ body {
     display: flex;
 }
 
+.position-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .position-centerY {
     display: flex;
     align-items: center;
 }
 
-.position-centerY-spacearoundx {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.interactuable
+{
+    cursor: pointer;
 }
