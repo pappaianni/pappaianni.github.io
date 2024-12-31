@@ -14,6 +14,7 @@
     display: flex;
     justify-content: center;
     z-index: 2;
+    margin-right: 15%;
 }
 
 .mainLogo
@@ -47,8 +48,8 @@
 {
     .mainLogoContainer
     {
-        width: 80%;
-        margin: 0;
+        width: 85%;
+        margin: 0% auto 15% auto;
     }
 
     .mainDrawingFace,
@@ -195,11 +196,10 @@
 {
     font-family: 'Pappafont';
     src: url('Pappafont.eot'); /* IE9 Compat Modes */
-    src: url('Pappafont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('Pappafont.woff2') format('woff2'), /* Super Modern Browsers */
+    src: url('Pappafont.woff2') format('woff2'), /* Super Modern Browsers */
             url('Pappafont.woff') format('woff'), /* Pretty Modern Browsers */
             url('Pappafont.ttf')  format('truetype'), /* Safari, Android, iOS */
-            url('Pappafont.svg#svgFontName') format('svg'); /* Legacy iOS */
+            url('Pappafont.svg') format('svg'); /* Legacy iOS */
 }
 
 .pappafont
