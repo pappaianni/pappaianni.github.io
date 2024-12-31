@@ -22,17 +22,11 @@ class LandpageController
         const MainLogoFace = document.getElementById("mainGloboFaceImage");
 
         MainLogoFace.classList.remove("poemFadeElement");
-        MainLogoFace.classList.add("poemShowElement");
-        
         setTimeout(function() {
-
             MainLogoGlobe.classList.remove("poemFadeElement");
-            MainLogoGlobe.classList.add("poemShowElement");
-
             setTimeout(function() {
                 
                 MainLogoTitle.classList.remove("poemFadeElement");
-                MainLogoTitle.classList.add("poemShowElement");
 
                 setTimeout(function() {
                     MainLogoTitle.classList.add("interactuable");
