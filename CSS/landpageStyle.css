@@ -3,6 +3,7 @@
 .mainTitleContainer
 {
     position: relative;
+    overflow: clip;
     transition: opacity 3s;
 }
 
