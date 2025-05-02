@@ -22,16 +22,16 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: opacity 5s;
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
-    transition: opacity 5s;
 }
 
 .mainDrawingFace,
 .mainDrawingGlobe
 {
     height: 80%;
-    opacity: 0.8;
+    opacity: 1.0;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -48,7 +48,7 @@
 {
     .mainLogoContainer
     {
-        width: 85%;
+        width: 80%;
         margin: 0% auto 15% auto;
     }
 
@@ -56,7 +56,7 @@
     .mainDrawingGlobe
     {
         height: 50%;
-        opacity: 0.8;
+        opacity: 1.0;
     }
 }
 
@@ -64,7 +64,7 @@
 
 #bodyContainer
 {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 3s;
 }
 
@@ -72,13 +72,13 @@
 
 .poemContainer
 {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: #f6f6f6;
     overflow: hidden;
     position: relative;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 15%);
 }
 
 #poemTitleContainer
@@ -158,6 +158,150 @@
         font-size: 5vmin;
         margin: 0vmin;
     }
+}
+
+/* General Container */
+
+.textContainer
+{
+    font-size: 2.8vmin;
+}
+
+/* Intro Container */
+
+#PappaianniName{
+    max-width: 50vmin;
+}
+
+#PappaIntroGarabato{
+    left: 0%;
+    max-height: 15vmin;
+    transform: rotate(20deg);
+}
+
+#PappaianniSentada{
+    max-height: 35vmin;
+    margin-left: 25%;
+}
+
+#BichoPajaro{
+    max-height: 20vmin;
+}
+
+#BichoPajaroJump{
+    width: 50%;
+    bottom: -30%;
+}
+
+#BichoPajaroBottom{
+    max-height: 9.5vmin;
+}
+
+#BichoOveja{
+    max-height: 25vmin;
+}
+
+#Hierbas{
+    max-height: 6vmin;
+}
+
+#Flores {
+    max-height: 40vmin;
+}
+
+#RedLines{
+    max-height: 8vmin;
+}
+
+#ProjectsTitle{
+    max-width: 25vmin;
+}
+
+/* Kino */
+
+#KinoTitle{
+    position: absolute;
+    height: 100%;
+}
+
+#KinoTitle svg{
+    max-width: 20vmin;
+}
+
+#KinoBuho{
+    max-height: 25vmin;
+}
+
+#KinoBuhoBackground
+{
+    display: flex;
+    justify-content: end;
+    background-image: url("../Images/KinoSeparator.png");
+    background-repeat: repeat-x;
+    background-position-y: 75%;
+}
+
+#KinoVideo{
+    width: 60%;
+    border-style: solid;
+}
+
+#KinoLeftCol{
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+
+#KinoRightCol{
+    right: 0;
+    height: 100%;
+    width: auto;
+}
+
+#KinoBottom{
+    height: 30vh;
+    background-image: url("../Images/KinoBottom.png");
+    background-position: center center;
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+/* Bird container */
+
+.birdTextContainer
+{
+    font-size: 5.0vmin;
+    text-align: center;
+}
+
+#BirdLandscapeSeparator
+{
+    bottom: -5px;
+}
+
+#FrontP2Image
+{
+    width: 20%;
+    max-width: 250px;
+}
+
+#FrontP2Image img
+{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.birdParagraph
+{
+    margin: 0.5em 0;
+}
+
+.birdContainer .birdIcon
+{
+    position: absolute;
+    width: 10%;
+    opacity: 0.7;
 }
 
 /* Animations */

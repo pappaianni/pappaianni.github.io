@@ -6,6 +6,11 @@ class LandpageController
     ElementsToDisplay = [];
     OnFinishCallback = undefined;
 
+    /* Time vars */
+
+    TimeToFadeOutMainLogo = 3000;
+    TimeToStartShowingPoemHeader = 1000;
+
     /* Initialization Methods */
 
     Init()
@@ -63,8 +68,10 @@ class LandpageController
         const MainLandpage = document.getElementById("mainLandpage");
         const BodyContainer = document.getElementById("bodyContainer");
 
-        // Fade landpage.
+        // Fade logo landpage.
         MainLandpage.classList.add("poemFadeElement");
+
+        // Showcase body.
         setTimeout(function(){
             MainLandpage.style.display = "none";
             BodyContainer.style.display = "";
@@ -72,8 +79,8 @@ class LandpageController
             setTimeout(function()
             {
                 that.InitializePoemHeader();
-            }, 3000);
-        }, 3000);
+            }, that.TimeToStartShowingPoemHeader);
+        }, that.TimeToFadeOutMainLogo);
     }
 
     InitializePoemHeader()
