@@ -1,4 +1,4 @@
-class LandpageController
+class MainPageController
 {
     TimeMSBetweenCharactersTitle = 200;
     TimeMSBetweenCharacters = 60;
@@ -6,20 +6,9 @@ class LandpageController
     ElementsToDisplay = [];
     OnFinishCallback = undefined;
 
-    /* Main Logo Var Times */
+    /* Body */
 
-    TimeToFadeInShowFace = 100;
-    TimeToFadeInShowGlobe = 1000;
-    TimeToFadeInLogo = 2000;
-    TimeToMakeLogoInteractuable = 1000;
-    TimeToFadeOutMainLogo = 3000;
-
-    /* Language Picker Var Times */
-
-    TimeToStartDisplayLang = 100;
-    TimeToMakeLangInteractive = 1000;
-
-    TimeToStartShowingPoemHeader = 1000;
+    TimeBeforeStartWritingText = 500;
     TimeToKeepTitleOnDisplay = 2000;
     TimeToStartShowingPoemBody = 1000;
 
@@ -28,69 +17,7 @@ class LandpageController
     Init()
     {
         this.InitializeElements();
-        this.InitializeLanding();
-    }
-
-    /* Landing */
-
-    InitializeLanding()
-    {
-        const that = this;
-        const MainLogoTitle = document.getElementById("mainLogoTitle");
-        const MainLogoGlobe = document.getElementById("mainLogoGloboImage");
-        const MainLogoFace = document.getElementById("mainLogoFaceImage");
-
-        setTimeout(function(){  MainLogoFace.classList.remove("elementNoOpacity"); }, that.TimeToFadeInShowFace);
-        setTimeout(function(){  MainLogoGlobe.classList.remove("elementNoOpacity"); }, that.TimeToFadeInShowGlobe);
-        setTimeout(function(){  MainLogoTitle.classList.remove("elementNoOpacity"); }, that.TimeToFadeInLogo);
-
-        setTimeout(function() {
-                MainLogoTitle.classList.add("interactuable");
-                MainLogoTitle.addEventListener("click", function(){
-                    MainLogoTitle.classList.remove("interactuable");
-                    that.HideLanding();
-                });
-            }, (that.TimeToFadeInLogo + that.TimeToMakeLogoInteractuable) );
-    }
-
-    HideLanding()
-    {
-        const that = this;
-        const MainLandpage = document.getElementById("mainLandpage");
-        MainLandpage.classList.add("elementNoOpacity");
-        setTimeout(function(){
-            MainLandpage.classList.add("turnOffDisplay");
-            that.InitializeLanguagePicker();
-        }, that.TimeToFadeOutMainLogo);
-    }
-
-    /* Language Picker */
-
-    InitializeLanguagePicker()
-    {
-        const that = this;
-        const LanguagePickerContainer = document.getElementById("languagePickerContainer");
-        const LanguagePicker = document.getElementById("languagePicker");
-
-        // Display container.
-        LanguagePickerContainer.classList.remove("turnOffDisplay");
-        setTimeout(function(){  LanguagePicker.classList.remove("elementNoOpacity"); }, this.TimeToStartDisplayLang);
-
-        // Setup languages.
-        setTimeout(function(){ 
-            const LanguagePickerElements = document.getElementById("languagePicker");
-            for(let LanguageElement of LanguagePickerElements.children) {
-                LanguageElement.classList.add("interactuable");
-                LanguageElement.addEventListener("click", function(){
-                    LanguageElement.classList.remove("interactuable");
-                    that.ConfigurePageLanguage(LanguageElement.dataset.lng);
-                });
-            }
-        }, this.TimeToMakeLangInteractive);
-    }
-
-    ConfigurePageLanguage(LanguageToUse){
-        console.log(LanguageToUse);
+        this.InitializeBody();
     }
 
     /* Body */
@@ -115,49 +42,58 @@ class LandpageController
     InitializeBody()
     {
         const that = this;
-        const MainLandpage = document.getElementById("mainLandpage");
-        const BodyContainer = document.getElementById("bodyContainer");
         const PoemContainerID = document.getElementById("poemContainerID");
 
-        // Fade logo landpage.
-        MainLandpage.classList.add("elementNoOpacity");
+        /* Normal Intersection Observer */
 
-        /* Setup intersection observer. */
-
-        const ObserverOptions = {
+        const NormalObserverOptions = {
             root: null,
             threshold: 0,
-            rootMargin: '0px 0px -200px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
-        const observer = new IntersectionObserver(entries => {
+        const NormalObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target);
+                    NormalObserver.unobserve(entry.target);
                 }
             });
-        }, ObserverOptions);
+        }, NormalObserverOptions);
 
         let fadeSections = Array.from(document.getElementsByClassName('anim-fade-in-section'));
         fadeSections = fadeSections.concat(Array.from(document.getElementsByClassName('anim-slow-fade-in-section')));
         fadeSections = fadeSections.concat(Array.from(document.getElementsByClassName('anim-fade-in-section-no-transform')));
-        fadeSections = fadeSections.concat(Array.from(document.getElementsByClassName('anim-fade-in-cleo')));
         for (let section of fadeSections) {
-            observer.observe(section);
+            NormalObserver.observe(section);
+        }
+
+        /* Cleo Intersection Observer */
+
+        const CleoObserverOptions = {
+            root: null,
+            threshold: 0,
+            rootMargin: '0px 0px 600px 0px'
+        };
+        
+        const CleoObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    CleoObserver.unobserve(entry.target);
+                }
+            });
+        }, CleoObserverOptions);
+
+        let fadeCleo = Array.from(document.getElementsByClassName('anim-fade-in-cleo'))
+        for (let section of fadeCleo) {
+            CleoObserver.observe(section);
         }
 
         /* Showcase body. */
 
-        setTimeout(function(){
-            MainLandpage.style.display = "none";
-            BodyContainer.style.display = "";
-            setTimeout(function()
-            {
-                PoemContainerID.classList.add("elementFullOpacity");
-                that.InitializePoemHeader();
-            }, that.TimeToStartShowingPoemHeader);
-        }, that.TimeToFadeOutMainLogo);
+        PoemContainerID.classList.add("elementFullOpacity");
+        setTimeout(function(){ that.InitializePoemHeader(); }, that.TimeBeforeStartWritingText);
     }
 
     InitializePoemHeader()
@@ -267,9 +203,9 @@ class LandpageController
     }
 };
 
-/* Create landpage controller and init once window is loaded. */
+/* Create controller and init once window is loaded. */
 
-let LandpageInstance = new LandpageController();
+let MainPageInstance = new MainPageController();
 window.addEventListener("DOMContentLoaded", (event) => {
-    LandpageInstance.Init();
+    MainPageInstance.Init();
 });

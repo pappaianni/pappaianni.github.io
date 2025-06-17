@@ -369,7 +369,7 @@
     opacity: 0;
     transform: translateY(50vh);
     visibility: hidden;
-    transition: opacity 3.0s ease-out, transform 3.5s ease-out;
+    transition: opacity 2.0s ease-out, transform 2.5s ease-out;
     will-change: opacity, visibility;
 }
 
