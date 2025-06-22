@@ -47,6 +47,39 @@
     transition: opacity 2.5s ease-in-out;
 }
 
+/* Language Picker */
+
+#languagePicker{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    font-size: 6vmin;
+    opacity: 1;
+}
+
+.languagePickerAnimFadeIn{
+    transition: opacity 1s linear;
+}
+
+.languagePickerTextTransform{
+    display: inline-block;
+    transform: translate(0px, 1vmin);
+}
+
+/* Animations */
+
+@keyframes globoLoop
+{
+    0% { transform: scale(1.0); }
+    25% { transform: scale(1.05); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1.0); }
+}
+
+
+
+/* Responsive */
+
 @media (max-aspect-ratio: 1/1)
 {
     .mainLogoContainer
@@ -63,340 +96,42 @@
     }
 }
 
-/* Language Picker */
+/* smartphones, iPhone, portrait 480x320 phones */
 
-#languagePicker{
-    width: 70%;
-    height: 100%;
-    margin: auto;
-    font-size: 6vmin;
-    opacity: 1;
-}
-
-.languagePickerAnimFadeIn{
-    transition: opacity 1s linear;
-}
-
-/* Poem Page */
-
-.poemContainer
-{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 15%);
-    transition: opacity 3s;
-    opacity: 0;
-}
-
-#poemTitleContainer
-{
-    font-size: 9.0vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 1.5s;
-}
-
-#poemBodyContainer
-{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: all 1.5s;
-}
-
-.poemTextContainer
-{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-evenly;
-    height: 90vh;
-    margin: 5vh 5vw;
-    position: absolute;
-    z-index: 2;
-    transition: all 1.5s;
-}
-
-.poemTextContainer p 
-{
-    font-size: 3.4vmin;
-    margin: 0vmin;
-}
-
-.poemTextContainer:hover
-{
-    transform: scale(1.05);
-}
-
-.poemTextImage
-{
-    height: 95vh;
-    position: absolute;
-    bottom: 0;
-    opacity: 0.4;
-    transition: all 2.5s;
-    z-index: 1;
-}
-
-.poemFadeInElement
-{
-    animation: fadeIn 1.s;
-}
-
-@media (max-aspect-ratio: 3/4)
-{
-    .poemTextContainer p 
-    {
-        font-size: 5vmin;
-        margin: 0vmin;
+@media (max-width:480px)  {
+    #languagePicker{
+        font-size: 10vmin;
     }
 }
 
-/* General Container */
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 
-.textContainer
-{
-    font-size: 2.8vmin;
+@media (min-width:481px)  {
+
+
 }
 
-/* Intro Container */
 
-#PappaianniName{
-    max-width: 50vmin;
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+
+
 }
 
-#PappaIntroGarabato{
-    left: 0%;
-    max-height: 15vmin;
-    transform: rotate(20deg);
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px)  {
+
+
 }
 
-#PappaianniSentada{
-    max-height: 35vmin;
-    margin-left: 25%;
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+
+
 }
 
-#BichoPajaro{
-    max-height: 20vmin;
-}
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
 
-#BichoPajaroJump{
-    width: 50%;
-    bottom: -30%;
-}
 
-#BichoPajaroBottom{
-    max-height: 9.5vmin;
-}
-
-#BichoOveja{
-    max-height: 25vmin;
-}
-
-#Hierbas{
-    max-height: 6vmin;
-}
-
-#Flores {
-    max-height: 40vmin;
-}
-
-#RedLines{
-    max-height: 8vmin;
-}
-
-#ProjectsTitle{
-    max-width: 25vmin;
-}
-
-/* Kino */
-
-#KinoTitle{
-    position: absolute;
-    height: 100%;
-}
-
-#KinoTitle svg{
-    max-width: 20vmin;
-}
-
-#KinoBuho{
-    max-height: 25vmin;
-}
-
-#KinoBuhoBackground
-{
-    display: flex;
-    justify-content: end;
-    background-image: url("../Images/KinoSeparator.png");
-    background-repeat: repeat-x;
-    background-position-y: 75%;
-}
-
-#KinoVideo{
-    width: 60%;
-    border-style: solid;
-}
-
-#KinoLeftCol{
-    left: 0;
-    height: 100%;
-    width: auto;
-}
-
-#KinoRightCol{
-    right: 0;
-    height: 100%;
-    width: auto;
-}
-
-#KinoBottom{
-    height: 30vh;
-    background-image: url("../Images/KinoBottom.png");
-    background-position: center center;
-    background-repeat: repeat-x;
-    background-size: contain;
-}
-
-/* Bird container */
-
-#BirdBuba{
-    z-index: -1;
-}
-
-.bird-poem-background{
-    background-color: white;
-}
-
-.birdTextContainer
-{
-    font-size: 5.0vmin;
-    text-align: center;
-}
-
-#BirdLandscapeSeparator
-{
-    bottom: -5px;
-}
-
-#FrontP2Image
-{
-    width: 20%;
-    max-width: 250px;
-}
-
-#FrontP2Image img
-{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.birdParagraph
-{
-    margin: 0.5em 0;
-}
-
-.birdContainer .birdIcon
-{
-    position: absolute;
-    width: 10%;
-    opacity: 0.7;
-}
-
-/* Animations */
-
-@keyframes globoLoop
-{
-    0% { transform: scale(1.0); }
-    25% { transform: scale(1.05); }
-    75% { transform: scale(0.95); }
-    100% { transform: scale(1.0); }
-}
-
-.transform-scale-low
-{
-    transition: transform 1.2s;
-}
-
-.transform-scale-low:hover
-{
-    transform: scale(1.05);
-}
-
-.transform-scale-medium
-{
-    transition: transform 1.5s;
-}
-
-.transform-scale-medium:hover
-{
-    transform: scale(1.15);
-}
-
-.anim-fade-in-section {
-    opacity: 0;
-    transform: translateY(10vh);
-    visibility: hidden;
-    transition: opacity 2.0s ease-out, transform 2.0s ease-out;
-    will-change: opacity, visibility;
-}
-
-.anim-slow-fade-in-section {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 4.0s ease-out;
-    will-change: opacity, visibility;
-}
-
-.anim-fade-in-section-no-transform {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 2.0s ease-out;
-    will-change: opacity, visibility;
-}
-
-.anim-fade-in-cleo {
-    opacity: 0;
-    transform: translateY(50vh);
-    visibility: hidden;
-    transition: opacity 2.0s ease-out, transform 2.5s ease-out;
-    will-change: opacity, visibility;
-}
-
-.anim-fade-in-section.in-view,
-.anim-slow-fade-in-section.in-view,
-.anim-fade-in-section-no-transform.in-view,
-.anim-fade-in-cleo.in-view {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-}
-
-/* Font Style */
-
-@font-face
-{
-    font-family: 'Pappafont';
-    src: url('Pappafont.eot'); /* IE9 Compat Modes */
-    src: url('Pappafont.woff2') format('woff2'), /* Super Modern Browsers */
-            url('Pappafont.woff') format('woff'), /* Pretty Modern Browsers */
-            url('Pappafont.ttf')  format('truetype'), /* Safari, Android, iOS */
-            url('Pappafont.svg') format('svg'); /* Legacy iOS */
-}
-
-.pappafont
-{
-    font-family: "Pappafont", "Yomogi", serif;
-    font-weight: 400;
-    font-style: normal;
 }

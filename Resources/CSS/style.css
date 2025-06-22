@@ -308,3 +308,180 @@ body {
 .twenty-left-offset{
     padding-left: 20%;
 }
+
+/* Animations */
+
+.transform-scale-low
+{
+    transition: transform 1.2s;
+}
+
+.transform-scale-low:hover
+{
+    transform: scale(1.05);
+}
+
+.transform-scale-medium
+{
+    transition: transform 1.5s;
+}
+
+.transform-scale-medium:hover
+{
+    transform: scale(1.15);
+}
+
+/* Font Style */
+
+@font-face
+{
+    font-family: 'Pappafont';
+    src: url('Pappafont.eot'); /* IE9 Compat Modes */
+    src: url('Pappafont.woff2') format('woff2'), /* Super Modern Browsers */
+            url('Pappafont.woff') format('woff'), /* Pretty Modern Browsers */
+            url('Pappafont.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('Pappafont.svg') format('svg'); /* Legacy iOS */
+}
+
+.pappafont
+{
+    font-family: "Pappafont", "Yomogi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Responsive */
+
+/* smartphones, iPhone, portrait 480x320 phones */
+
+@media (max-width:480px)  {
+    .mobile-responsive-layout-column{
+        flex-direction: column;
+    }
+
+    .mobile-responsive-layout-column-reverse{
+        flex-direction: column-reverse;
+    }
+
+    .mobile-responsive-content-center{
+        justify-content: center;
+    }
+
+    .mobile-responsive-container-full-width {
+        width: 100%;
+    }
+    
+    .mobile-responsive-container-eighty-width {
+        width: 80%;
+    }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+@media (min-width:481px)  {
+
+
+}
+
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+
+
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px)  {
+
+
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+
+
+}
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+
+
+}
+
+/*
+@media (max-aspect-ratio: 1/1)
+{
+    .mobile-layout-column{
+        flex-direction: column;
+    }
+
+    .mobile-layout-column-reverse{
+        flex-direction: column-reverse;
+    }
+
+    .mobile-container-full-page {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mobile-container-two-width {
+        width: 2%;
+    }
+
+    .mobile-container-three-width {
+        width: 3%;
+    }
+
+    .mobile-container-four-width {
+        width: 4%;
+    }
+
+    .mobile-container-five-width {
+        width: 5%;
+    }
+
+    .mobile-container-ten-width {
+        width: 10%;
+    }
+
+    .mobile-container-fifteen-width {
+        width: 15%;
+    }
+
+    .mobile-container-twenty-width {
+        width: 20%;
+    }
+
+    .mobile-container-thirty-width {
+        width: 30%;
+    }
+
+    .mobile-container-forty-width {
+        width: 40%;
+    }
+
+    .mobile-container-half-width {
+        width: 50%;
+    }
+
+    .mobile-container-sixty-width {
+        width: 60%;
+    }
+
+    .mobile-container-threefour-width {
+        width: 75%;
+    }
+
+    .mobile-container-eighty-width {
+        width: 80%;
+    }
+
+    .mobile-container-full-width {
+        width: 100%;
+    }
+
+    .mobile-full-container-size{
+        width: 100%;
+        height: 100%;
+    }
+}*/
